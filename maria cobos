@@ -1,4 +1,5 @@
 // See https://aka.ms/new-console-template for more information
+using System;
 using System.Xml.Linq;
 
 Console.WriteLine("Hello, World!");
@@ -8,21 +9,30 @@ Console.WriteLine("hello, vamos a jugar piedra papel o tijera ");
 Console.WriteLine("ingrese su nombre para empezar a jugar ");
 string n1 = Console.ReadLine();
 
+int selecciondelIA = 0;
+int selecciondeljugador = 0;
+
 // se inicia con puntuacion 0
 int puntajedeljugador = 0;
 int puntajedelIA = 0;
 int veces = 0;
 
-// seleccion del jugador
-Console.WriteLine("ingrese {1} para piedra, ingrese {2} para papel e ingrese {3} para tijera");
-string n3 = Console.ReadLine();
 
-int selecciondelIA = Random.Next(1, 4);
-int selecciondeljugador = Random.Next(1, 4);
-int puntajedeljugador = Convert.ToInt32(Console.ReadLine());
 
-while (veces < 5)
+Random IA = new Random();
+
+
+while (puntajedeljugador < 3 && puntajedelIA < 3)
 {
+    selecciondelIA = IA.Next(1, 4);
+
+
+    Console.WriteLine($"El marcador actual es de {puntajedelIA} puntos para la IA y {puntajedeljugador} puntos para {n1}");
+    Console.WriteLine("ingrese {1} para piedra, ingrese {2} para papel e ingrese {3} para tijera");
+
+    selecciondeljugador = Convert.ToInt32(Console.ReadLine());
+
+
     if (selecciondeljugador == 1)
     {
         Console.WriteLine("usted escogio Piedra");
