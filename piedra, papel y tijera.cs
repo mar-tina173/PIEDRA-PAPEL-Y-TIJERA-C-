@@ -1,8 +1,8 @@
 // See https://aka.ms/new-console-template for more information
-using System;
 using System.Xml.Linq;
 
 Console.WriteLine("Hello, World!");
+
 Console.WriteLine("hello, vamos a jugar piedra papel o tijera ");
 
 // nombre del jugador
@@ -18,18 +18,15 @@ int puntajedelIA = 0;
 int veces = 0;
 
 
-
 Random IA = new Random();
-
-
-while (puntajedeljugador < 3 && puntajedelIA < 3)
+while (veces<5)
 {
+
     selecciondelIA = IA.Next(1, 4);
 
 
     Console.WriteLine($"El marcador actual es de {puntajedelIA} puntos para la IA y {puntajedeljugador} puntos para {n1}");
     Console.WriteLine("ingrese {1} para piedra, ingrese {2} para papel e ingrese {3} para tijera");
-
     selecciondeljugador = Convert.ToInt32(Console.ReadLine());
 
 
@@ -124,6 +121,10 @@ while (puntajedeljugador < 3 && puntajedelIA < 3)
             }
         }
     }
+    if(selecciondeljugador>=4)
+    {
+        Console.WriteLine("El valor que ingreso no es valido, ingrese nuevamente su numero");
+    }
 }
 
 Console.WriteLine($"la IA tuvo un total de {puntajedelIA} puntos y el jugador tuvo un total de {puntajedeljugador} puntos.");
@@ -138,4 +139,6 @@ else
 }
 
 Console.WriteLine("FIN DEL JUEGO, ESPERO LE HAYA GUSTADO");
+
+
 
